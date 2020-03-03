@@ -23,25 +23,25 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (531, 75) {
-		label at (0, -1)
+	simpleIdentifier resources.PassThroughMessages.gas at (531, 75) {
+		label at (0, 9)
 		inPin connection_10 {
 			bendpoints (0, -30), (350, -30)
 		}
-		sequenceCall {
+		sequenceCall at (0, -54) {
 			inPin connection_9 {
-				bendpoints (70, 0), (70, -100)
+				bendpoints (70, 0), (70, -130)
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (531, 235) {
-		label at (0, -1)
+	simpleIdentifier resources.PassThroughMessages.brake at (521, 235) {
+		label at (80, -21)
 		inPin connection_12 {
-			bendpoints (0, 50), (350, 50)
+			bendpoints (0, 50), (380, 50), (380, 64)
 		}
-		sequenceCall {
+		sequenceCall at (0, -44) {
 			inPin connection_11 {
-				bendpoints (70, 0), (70, 60)
+				bendpoints (70, 0), (70, 40)
 			}
 		}
 	}
@@ -91,8 +91,8 @@ blockdiagramSpecification Main {
 			connection_8
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (531, 345) {
-		label at (0, -1)
+	simpleIdentifier resources.PassThroughMessages.gas at (531, 345) {
+		label at (0, 9)
 		inPin connection_16 {
 			bendpoints (20, 0), (20, -50)
 		}
@@ -102,9 +102,11 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (531, 395) {
-		label at (0, -1)
-		inPin connection_14
+	simpleIdentifier resources.PassThroughMessages.brake at (531, 395) {
+		label at (0, 9)
+		inPin connection_14 {
+			bendpoints (30, 0), (30, 14)
+		}
 		sequenceCall {
 			inPin connection_13 {
 				bendpoints (0, 190)

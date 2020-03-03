@@ -4,6 +4,7 @@ application {
 	class myWork.myDriver
 	class myWork.StateHandlerBD
 	class myWork.Target
+	class myWork.PassThrough
 }
 schedule {
 	startup {

@@ -371,7 +371,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540F4
+			ECU_ADDRESS 0x4540FC
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 0
 			/end IF_DATA
@@ -385,7 +385,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540F8
+			ECU_ADDRESS 0x454100
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 1
 			/end IF_DATA
@@ -399,7 +399,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540EC
+			ECU_ADDRESS 0x4540F4
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 0
 			/end IF_DATA
@@ -413,7 +413,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540F0
+			ECU_ADDRESS 0x4540F8
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 1
 			/end IF_DATA
@@ -427,7 +427,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540E8
+			ECU_ADDRESS 0x4540F0
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 2
@@ -442,7 +442,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540E9
+			ECU_ADDRESS 0x4540F1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 3
@@ -457,7 +457,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540EA
+			ECU_ADDRESS 0x4540F2
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 4
@@ -472,7 +472,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540EB
+			ECU_ADDRESS 0x4540F3
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 5
@@ -544,7 +544,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x454100
+			ECU_ADDRESS 0x454108
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 5 1001 0
 			/end IF_DATA
@@ -730,7 +730,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -2147483648
 			/* upper limit        */ 2147483647
-			ECU_ADDRESS 0x4540FC
+			ECU_ADDRESS 0x454104
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1001 0
 			/end IF_DATA
@@ -747,6 +747,62 @@
 			ECU_ADDRESS 0x4540E0
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 8 1000 0 1000 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.PassThrough.psinstance.gas
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4540AC
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 9 1000 0 1000 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.PassThrough.psinstance.brake
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4540A8
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 9 1000 0 1000 1
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.ControllerMessages.gas
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4540E8
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 10 1001 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.ControllerMessages.brake
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4540EC
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 10 1001 1
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -784,6 +840,7 @@
 				myWork.myDriver
 				myWork.StateHandlerBD
 				myWork.Target
+				myWork.PassThrough
 				resources.TimeTick
 			/end SUB_FUNCTION
 		/end FUNCTION
@@ -934,6 +991,32 @@
 			/end LOC_MEASUREMENT
 		/end FUNCTION
 		
+		/begin FUNCTION myWork.PassThrough
+			""
+			/begin IN_MEASUREMENT
+				resources.ControllerMessages.brake
+				resources.ControllerMessages.gas
+				resources.DriverMessages.brakeDriver
+				resources.DriverMessages.powerDriver
+				resources.StateHandlerMessages.status
+			/end IN_MEASUREMENT
+			/begin OUT_MEASUREMENT
+				resources.PassThroughMessages.brake
+				resources.PassThroughMessages.gas
+			/end OUT_MEASUREMENT
+			/begin SUB_FUNCTION
+				myWork.PassThrough.psinstance
+			/end SUB_FUNCTION
+		/end FUNCTION
+		
+		/begin FUNCTION myWork.PassThrough.psinstance
+			""
+			/begin LOC_MEASUREMENT
+				myWork.PassThrough.psinstance.brake
+				myWork.PassThrough.psinstance.gas
+			/end LOC_MEASUREMENT
+		/end FUNCTION
+		
 		/begin FUNCTION resources.TimeTick
 			""
 		/end FUNCTION
@@ -974,6 +1057,8 @@
 				myWork.StateHandlerBD
 				resources.StateHandlerMessages
 				myWork.Target
+				myWork.PassThrough
+				resources.ControllerMessages
 				resources.TimeTick
 			/end SUB_GROUP
 		/end GROUP
@@ -1118,6 +1203,29 @@
 			""
 			/begin REF_MEASUREMENT
 				myWork.Target.targetInstance.targetVelocity
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP myWork.PassThrough
+			""
+			/begin SUB_GROUP
+				myWork.PassThrough.psinstance
+			/end SUB_GROUP
+		/end GROUP
+		
+		/begin GROUP myWork.PassThrough.psinstance
+			""
+			/begin REF_MEASUREMENT
+				myWork.PassThrough.psinstance.brake
+				myWork.PassThrough.psinstance.gas
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP resources.ControllerMessages
+			""
+			/begin REF_MEASUREMENT
+				resources.ControllerMessages.brake
+				resources.ControllerMessages.gas
 			/end REF_MEASUREMENT
 		/end GROUP
 		

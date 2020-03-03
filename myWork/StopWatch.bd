@@ -1,0 +1,36 @@
+classType myWork.StopWatch
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_1
+		}
+	}
+	simpleIdentifier time at (491, 125) {
+		label at (-10, 49)
+		inPin connection_2
+		outPin {
+			connection_3
+		}
+		sequenceCall at (30, -54) {
+			inPin connection_1
+		}
+	}
+	addition at (361, 116) {
+		inPin connection_4
+		inPin connection_3 {
+			bendpoints (130, 0), (130, 150), (-180, 150)
+		}
+		outPin {
+			connection_2
+		}
+	}
+	methodArgumentIdentifier calc.deltaT at (171, 115) {
+		label at (0, -1)
+		outPin {
+			connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}

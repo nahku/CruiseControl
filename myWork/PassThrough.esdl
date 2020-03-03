@@ -11,17 +11,16 @@ static class PassThrough
 		  resources.ControllerMessages.gas,
 		  resources.ControllerMessages.brake
 	writes PassThroughMessages.gas, PassThroughMessages.brake {
-	@generated("blockdiagram")
-	@thread
-	public void calc() {
-		integer status = StateHandlerMessages.status;
-		if (status == 0 || status == 2) {
-			PassThroughMessages.gas = DriverMessages.powerDriver;
-			PassThroughMessages.brake = DriverMessages.brakeDriver;
+		PassThroughClass psinstance;
+		@generated("blockdiagram")
+		@thread
+		public void calc() {
+			psinstance.calculateControl(StateHandlerMessages.status, 
+										resources.DriverMessages.powerDriver, 
+		  								resources.DriverMessages.brakeDriver, 
+										resources.ControllerMessages.gas,
+		  								resources.ControllerMessages.brake);
+		  	PassThroughMessages.gas = psinstance.getGas();
+		  	PassThroughMessages.brake = psinstance.getBrake();
 		}
-		else {
-			PassThroughMessages.gas = ControllerMessages.gas;
-			PassThroughMessages.brake = ControllerMessages.brake;
-		}
-	}
 }

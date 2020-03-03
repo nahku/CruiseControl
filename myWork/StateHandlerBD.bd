@@ -40,7 +40,7 @@ blockdiagramSpecification Main {
 			argumentPin at (left, 9) connection_9 {
 				bendpoints (100, 0), (100, -50)
 			}
-			sequenceCall {
+			sequenceCall at (-10, -4) {
 				inPin connection_8
 			}
 		}
@@ -48,7 +48,7 @@ blockdiagramSpecification Main {
 			argumentPin at (left, 14) connection_11 {
 				bendpoints (80, 0), (80, -70)
 			}
-			sequenceCall {
+			sequenceCall at (-10, 26) {
 				inPin connection_10
 			}
 		}

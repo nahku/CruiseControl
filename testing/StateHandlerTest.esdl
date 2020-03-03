@@ -19,7 +19,7 @@ static class StateHandlerTest {
 		onButtonPressed = true;
 		StateHandlerConvert.calcParam(onButtonPressed, offButtonPressed, powerDriver, brakeDriver);
 		
-		StateHandlerBD.calc();
+		//StateHandlerBD.calc();
 		status = StateHandlerConvert.returnStatus();
 		
 		Assert.assertIntEqual(status, 1);

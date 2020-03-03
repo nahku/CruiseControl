@@ -13,6 +13,7 @@ schedule {
 		process myCar.myCar.calc
 		process myWork.myACC.control
 		process myWork.myDriver.drive
+		process myWork.myDriver.increaseTarget
 		process myWork.StateHandlerBD.calc
 	}
 }

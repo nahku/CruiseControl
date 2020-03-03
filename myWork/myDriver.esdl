@@ -9,6 +9,8 @@ reads TargetMessages.targetVelocity, CarMessages.v
 writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.increaseSpeed, DriverMessages.decreaseSpeed, DriverMessages.onButtonPressed {
 	characteristic real p = 0.0;
 	characteristic real c = 0.0;
+	boolean flag = true;
+	integer increaseCounter = 2;
 	StopWatch StopWatch_instance;
 	real time;
 
@@ -23,19 +25,50 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 	
 	@thread
 	public void increaseTarget() {
-		DriverMessages.powerDriver = 50.0;
+		//DriverMessages.powerDriver = 50.0;
+		if(flag){
+			DriverMessages.onButtonPressed = true;
+			flag = false;
+		}else{
+			DriverMessages.onButtonPressed = false;
+		}
 		
-		while(time<5.0){}
-		DriverMessages.powerDriver = 50.0;
-		while(time<10.0){}
-		DriverMessages.onButtonPressed = true;
-		DriverMessages.increaseSpeed = true;
+		if(time<5.0){
+			DriverMessages.powerDriver = 50.0;
+		}
+		
+		else if(time<10.0 && time>5.0){
+			DriverMessages.powerDriver = 0.0;
+			
+			if(increaseCounter > 1){
+				DriverMessages.increaseSpeed = true;
+				increaseCounter -= 1;
+			} else if(increaseCounter == 1){
+				DriverMessages.increaseSpeed = false;
+			}
+			
+		}
+		else if(time<15.0 && time>10.0){
+			if(increaseCounter > 0){
+				DriverMessages.increaseSpeed = true;
+				increaseCounter -= 1;
+			}else if(increaseCounter == 0){
+				DriverMessages.increaseSpeed = false;
+			}
+		}
+		else
+		{
+			DriverMessages.increaseSpeed = false;
+			DriverMessages.brakeDriver = 10.0;
+		}
+		
+		//DriverMessages.increaseSpeed = true;
 		//wait0,01s
-		DriverMessages.increaseSpeed = false;
+		//DriverMessages.increaseSpeed = false;
 		//wait0,01s
-		DriverMessages.increaseSpeed = true;
+		//DriverMessages.increaseSpeed = true;
 		//wait0,01s
-		DriverMessages.increaseSpeed = false;
+		//DriverMessages.increaseSpeed = false;
 		
 		
 	}

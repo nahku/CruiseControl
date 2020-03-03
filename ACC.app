@@ -3,6 +3,7 @@ application {
 	class myWork.myACC
 	class myWork.myDriver
 	class myWork.StateHandlerBD
+	class myWork.Target
 }
 schedule {
 	startup {
@@ -15,5 +16,6 @@ schedule {
 		process myWork.myDriver.drive
 		process myWork.myDriver.increaseTarget
 		process myWork.StateHandlerBD.calc
+		process myWork.Target.computeTarget
 	}
 }

@@ -18,6 +18,6 @@ static class TargetTest{
 		real res;
 		res = target.computeTarget(status, inc, dec, v);
 		Assert.assertEqual(res, 50.0);
-	}	
+	}
 
 }

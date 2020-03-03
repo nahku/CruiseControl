@@ -26,5 +26,4 @@ class TargetClass{
 			}
 			return targetVelocity;
 			}
-	}
 }

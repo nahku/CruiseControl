@@ -1,0 +1,99 @@
+classType myWork.StateHandlerBD
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_3, connection_4, connection_6, connection_8, connection_10, connection_12
+		}
+	}
+	complexIdentifier StateHandler_instance_2 at (331, 231) size (42, 23) {
+		label at (0, 1)
+		methodCall myWork.StateHandler.stateHandlerStatemachineTrigger {
+			methodVoidPin at (top, 0) sequenceCall at (-14, -52) {
+				inPin connection_3
+			}
+		}
+		elementCall (myWork.StateHandler.status) {
+			returnPin at (right, 8) {
+				connection_13
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myWork.StateHandler.onButtonPressed) {
+			argumentPin at (left, 3) connection_5 {
+				bendpoints (100, 0), (100, 10)
+			}
+			sequenceCall {
+				inPin connection_4
+			}
+		}
+		elementCall (myWork.StateHandler.offButtonPressed) {
+			argumentPin at (left, 6) connection_7 {
+				bendpoints (90, 0), (90, -20)
+			}
+			sequenceCall {
+				inPin connection_6
+			}
+		}
+		elementCall (myWork.StateHandler.powerDriver) {
+			argumentPin at (left, 9) connection_9 {
+				bendpoints (100, 0), (100, -50)
+			}
+			sequenceCall {
+				inPin connection_8
+			}
+		}
+		elementCall (myWork.StateHandler.brakeDriver) {
+			argumentPin at (left, 14) connection_11 {
+				bendpoints (80, 0), (80, -70)
+			}
+			sequenceCall {
+				inPin connection_10
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.onButtonPressed at (81, 255) {
+		label at (0, -1)
+		outPin {
+			connection_5
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.offButtonPressed at (91, 315) {
+		label at (0, -1)
+		outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (81, 375) {
+		label at (0, -1)
+		outPin {
+			connection_9
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (121, 445) {
+		label at (0, -1)
+		outPin {
+			connection_11
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.StateHandlerMessages.status at (841, 315) {
+		label at (0, -1)
+		inPin connection_13
+		sequenceCall {
+			inPin connection_12
+		}
+	}
+}

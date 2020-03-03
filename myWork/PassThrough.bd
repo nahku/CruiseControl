@@ -1,0 +1,6 @@
+classType myWork.PassThrough
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active
+	}
+}

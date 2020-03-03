@@ -1,6 +1,0 @@
-classType myWork.Target
-blockdiagramSpecification Main {
-	methodBody calc {
-		outPin active
-	}
-}

@@ -15,7 +15,7 @@ data interface StateHandlerMessages {
 }
 
 data interface TargetMessages {
-	integer targetVelocity = 0;
+	real targetVelocity = 0.0;
 }
 
 data interface PassThroughMessages {

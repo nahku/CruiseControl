@@ -19,7 +19,6 @@ data interface TargetMessages {
 }
 
 data interface PassThroughMessages {
-	integer targetVelocity = 0;
 	real gas = 0.0;
 	real brake = 0.0;
 }

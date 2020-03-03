@@ -1,23 +1,23 @@
 package testing;
 
-import myWork.Target;
+import myWork.TargetClass;
 import resources.DriverMessages;
 import resources.TargetMessages;
 import resources.StateHandlerMessages;
 import assertLib.Assert;
 
-static class TargetTest
-reads resources.TargetMessages.targetVelocity
-writes resources.DriverMessages.decreaseSpeed, resources.CarMessages.v, resources.StateHandlerMessages.status {
-	
+static class TargetTest{
+	TargetClass target;
+	integer status = 1;
+	boolean inc = true;
+	boolean dec = false;
+	real v = 50.0;
 	@Test
 	public void setInitialTarget(){
-		resources.DriverMessages.decreaseSpeed = true;
-		resources.StateHandlerMessages.status = 1;
-		resources.CarMessages.v = 100.0;
 		
-		myWork.Target.computeTarget();
-		Assert.assertEqual(resources.TargetMessages.targetVelocity, 100.0);
+		real res;
+		res = target.computeTarget(status, inc, dec, v);
+		Assert.assertEqual(res, 50.0);
 	}	
 
 }

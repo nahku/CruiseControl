@@ -2,7 +2,7 @@ classType myWork.myDriver
 blockdiagramSpecification Main {
 	methodBody drive {
 		outPin active {
-			connection_5, connection_6
+			connection_5, connection_6, connection_12, connection_8
 		}
 	}
 	simpleIdentifier p at (561, 105) {
@@ -31,6 +31,45 @@ blockdiagramSpecification Main {
 		inPin connection_4
 		sequenceCall {
 			inPin connection_6
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (81, 425) {
+		label at (0, -1)
+		outPin sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier time at (431, 165) {
+		label at (0, -1)
+		inPin connection_9
+		outPin sequenceCall {
+			inPin connection_8
+		}
+	}
+	simpleIdentifier resources.TimeTick.dTs at (61, 165) {
+		label at (0, -1)
+		inPin outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier StopWatch_instance at (241, 161) size (14, 8) {
+		label at (0, 1)
+		methodCall myWork.StopWatch.calc {
+			argumentPin deltaT at (left, 0) connection_13
+			sequenceCall at (-30, -84) {
+				inPin connection_12
+			}
+		}
+		elementCall (myWork.StopWatch.time) {
+			returnPin at (right, 0) {
+				connection_9
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
 }

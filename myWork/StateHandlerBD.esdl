@@ -9,6 +9,7 @@ writes StateHandlerMessages.status {
 	StateHandler StateHandler_instance_2;
 
 	@generated("blockdiagram")
+	@thread
 	public void calc() {
 		StateHandler_instance_2.stateHandlerStatemachineTrigger(); // Main/calc 1
 		StateHandler_instance_2.onButtonPressed = DriverMessages.onButtonPressed; // Main/calc 2

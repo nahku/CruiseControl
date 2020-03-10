@@ -10,7 +10,13 @@ reads PassThroughMessages.gas, PassThroughMessages.brake {
 	@generated("blockdiagram")
 	@thread
 	public void calc() {
-		CarMessages.v = myVehicle.vCar(PassThroughMessages.gas, PassThroughMessages.brake); // Main/calc 1
-		CarMessages.acceleration = myVehicle.accel; // Main/calc 2
+		real v = myVehicle.vCar(PassThroughMessages.gas, PassThroughMessages.brake); // Main/calc 1
+		if (v == 0.0){
+			CarMessages.acceleration = 0.0;
+		}
+		else{
+			CarMessages.acceleration = myVehicle.accel; // Main/calc 2
+		}
+		CarMessages.v = v;
 	}
 }

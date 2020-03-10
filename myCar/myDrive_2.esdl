@@ -22,6 +22,8 @@ using Impl {
 	contType s = 0.0;
 	characteristic contType TrackSize = 1000.0;
 	contType v = 0.0;
+	@get
+	real accel;
 
 	@generated("blockdiagram")
 	public contType vCar(contType in powerCtrl, contType in brakeCtrl) {
@@ -37,7 +39,8 @@ using Impl {
 		if (v < 0.0) {
 			v = 0.0; // Main/vCar 8/if-then 1
 		} // Main/vCar 8
-		return v; // Main/vCar oo
+		accel = (BrakeMomentum.getAt(brakeCtrl) + momentum + AirFriction.getAt(v) + (9.81 * (dh / ds))); // Main/vCar 9
+		return v; // Main/vCar 10
 	}
 
 	public initializer Data() {

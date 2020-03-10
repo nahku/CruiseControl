@@ -18,8 +18,8 @@ schedule {
 		process myWork.myDriver.drive
 		process myWork.myDriver.keepTarget
 		process myWork.StateHandlerBD.calc
-		process myWork.PassThrough.calc
 		process myWork.Target.computeTarget
 		process myWork.Controller.calc
+		process myWork.PassThrough.calc
 	}
 }

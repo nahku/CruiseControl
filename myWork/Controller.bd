@@ -8,7 +8,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.CarMessages.v at (91, 45) {
 		label at (0, -1)
 		outPin {
-			connection_6, connection_4
+			connection_6, connection_42, connection_44, connection_4
 		}
 		sequenceCall {
 			inPin
@@ -17,7 +17,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.TargetMessages.targetVelocity at (91, 145) {
 		label at (0, -1)
 		outPin {
-			connection_5, connection_3
+			connection_5, connection_43, connection_45, connection_3
 		}
 		sequenceCall {
 			inPin
@@ -25,23 +25,23 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.ControllerMessages.gas at (911, 65) {
 		label at (0, -1)
-		inPin connection_15 {
-			bendpoints (170, 0), (170, -10)
+		inPin connection_38 {
+			bendpoints (40, 0), (40, -430)
 		}
 		sequenceCall {
-			inPin connection_14 {
+			inPin connection_37 {
 				bendpoints (160, 0), (160, 10)
 			}
 		}
 	}
-	simpleIdentifier resources.ControllerMessages.brake at (911, 195) {
+	simpleIdentifier resources.ControllerMessages.brake at (911, 235) {
 		label at (0, -1)
-		inPin connection_10 {
-			bendpoints (60, 0), (60, -80)
+		inPin connection_36 {
+			bendpoints (80, 0), (80, -260)
 		}
 		sequenceCall at (-20, -44) {
-			inPin connection_9 {
-				bendpoints (150, 0), (150, -30)
+			inPin connection_35 {
+				bendpoints (150, 0), (150, 10)
 			}
 		}
 	}
@@ -65,22 +65,12 @@ blockdiagramSpecification Main {
 			connection_12
 		}
 	}
-	literal Numeric "100.0" at (551, 73) size (79, 0) {
-		outPin {
-			connection_15
-		}
-	}
-	literal Numeric "100.0" at (471, 273) size (79, 0) {
-		outPin {
-			connection_10
-		}
-	}
 	if at (521, 31) {
 		inPin connection_16 {
 			bendpoints (60, 0), (60, -20)
 		}
 		ifControlFlowOutPin {
-			connection_14, connection_18
+			connection_18, connection_37
 		}
 		sequenceCall {
 			inPin connection_13
@@ -89,7 +79,7 @@ blockdiagramSpecification Main {
 	if at (531, 181) {
 		inPin connection_12
 		ifControlFlowOutPin {
-			connection_9, connection_20
+			connection_20, connection_35
 		}
 		sequenceCall {
 			inPin connection_17
@@ -125,6 +115,140 @@ blockdiagramSpecification Main {
 			inPin connection_20 {
 				bendpoints (160, 0), (160, -80)
 			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.acceleration at (81, 275) {
+		label at (-70, 19)
+		outPin {
+			connection_25
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	absolute at (141, 271) {
+		inPin connection_25
+		outPin {
+			connection_26
+		}
+	}
+	minimum at (231, 276) {
+		inPin connection_27 {
+			bendpoints (30, 0), (30, -100)
+		}
+		inPin connection_26 {
+			bendpoints (20, 0), (20, 20)
+		}
+		outPin {
+			connection_34
+		}
+	}
+	literal Numeric "4.0" at (131, 373) size (49, 0) {
+		outPin {
+			connection_33, connection_27
+		}
+	}
+	subtraction at (281, 326) {
+		inPin connection_33 {
+			bendpoints (50, 0), (50, -50)
+		}
+		inPin connection_34 {
+			bendpoints (0, 60)
+		}
+		outPin {
+			connection_30
+		}
+	}
+	multiplication at (341, 376) {
+		inPin connection_30 {
+			bendpoints (0, 40)
+		}
+		inPin connection_49 {
+			bendpoints (20, 0), (20, -20)
+		}
+		outPin {
+			connection_50
+		}
+	}
+	literal Numeric "50.0" at (231, 413) size (69, 0) {
+		outPin {
+			connection_49
+		}
+	}
+	maximum at (201, 566) {
+		inPin connection_44 {
+			bendpoints (50, 0), (50, 260), (70, 260)
+		}
+		inPin connection_45 {
+			bendpoints (20, 0), (20, 220), (-10, 220), (-10, 440)
+		}
+		outPin {
+			connection_40
+		}
+	}
+	minimum at (211, 486) {
+		inPin connection_42 {
+			bendpoints (60, 0), (60, 220), (80, 220)
+		}
+		inPin connection_43 {
+			bendpoints (30, 0), (30, 180), (80, 180)
+		}
+		outPin {
+			connection_41
+		}
+	}
+	division at (331, 526) {
+		inPin connection_41 {
+			bendpoints (50, 0), (50, 30)
+		}
+		inPin connection_40 {
+			bendpoints (50, 0), (50, -30)
+		}
+		outPin {
+			connection_48
+		}
+	}
+	subtraction at (421, 566) {
+		inPin connection_47 {
+			bendpoints (10, 0), (10, 100)
+		}
+		inPin connection_48 {
+			bendpoints (20, 0), (20, 50)
+		}
+		outPin {
+			connection_51
+		}
+	}
+	literal Numeric "1.1" at (351, 463) size (49, 0) {
+		outPin {
+			connection_47
+		}
+	}
+	multiplication at (471, 456) {
+		inPin connection_50 {
+			bendpoints (0, 30), (90, 30)
+		}
+		inPin connection_51 {
+			bendpoints (0, -50), (10, -50)
+		}
+		outPin {
+			connection_52
+		}
+	}
+	maximum at (521, 486) {
+		inPin connection_52 {
+			bendpoints (10, 0)
+		}
+		inPin connection_53 {
+			bendpoints (0, -30), (-10, -30)
+		}
+		outPin {
+			connection_38, connection_36
+		}
+	}
+	literal Numeric "0.0" at (481, 553) size (49, 0) {
+		outPin {
+			connection_53
 		}
 	}
 }

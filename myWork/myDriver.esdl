@@ -11,6 +11,7 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 	characteristic real c = 0.0;
 	boolean flag = true;
 	integer increaseCounter = 2;
+	integer increaseCounter2 = 2;
 	StopWatch StopWatch_instance;
 	real time;
 
@@ -55,6 +56,33 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 			}else if(increaseCounter == 0){
 				DriverMessages.increaseSpeed = false;
 			}
+		}
+		else if (time<75.0 && time > 15.0) {
+			DriverMessages.brakeDriver = 0.0;
+			DriverMessages.powerDriver = 0.0;
+		}
+		else if(time<80.0 && time>75.0){
+			DriverMessages.powerDriver = 0.0;
+			
+			if(increaseCounter2 > 1){
+				DriverMessages.increaseSpeed = true;
+				increaseCounter2 -= 1;
+			} else if(increaseCounter2 == 1){
+				DriverMessages.increaseSpeed = false;
+			}
+			
+		}
+		else if(time<85.0 && time>80.0){
+			if(increaseCounter2 > 0){
+				DriverMessages.increaseSpeed = true;
+				increaseCounter2 -= 1;
+			}else if(increaseCounter2 == 0){
+				DriverMessages.increaseSpeed = false;
+			}
+		}
+		else if (time<100.0 && time > 85.0) {
+			DriverMessages.brakeDriver = 0.0;
+			DriverMessages.powerDriver = 0.0;
 		}
 		else
 		{

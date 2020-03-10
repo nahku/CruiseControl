@@ -2,7 +2,7 @@ classType myCar.myDrive_2
 blockdiagramSpecification Main {
 	methodBody vCar {
 		outPin active {
-			connection_2, connection_11, connection_32, connection_16, connection_48, connection_36, connection_29, connection_3, connection_55, connection_1
+			connection_2, connection_11, connection_32, connection_16, connection_48, connection_36, connection_55, connection_29, connection_3, connection_1
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -45,7 +45,7 @@ blockdiagramSpecification Main {
 			bendpoints (0, -100)
 		}
 		outPin {
-			connection_56, connection_26
+			connection_56
 		}
 	}
 	simpleIdentifier EngineMomentum at (241, 91) {
@@ -74,7 +74,7 @@ blockdiagramSpecification Main {
 	}
 	multiplication at (551, 106) {
 		inPin connection_26 {
-			bendpoints (50, 0)
+			bendpoints (0, 40), (-430, 40), (-430, 60)
 		}
 		inPin connection_28 {
 			bendpoints (10, 0), (10, -20)
@@ -426,9 +426,12 @@ blockdiagramSpecification Main {
 	simpleIdentifier accel at (901, 45) {
 		label at (0, -1)
 		inPin connection_56 {
-			bendpoints (60, 0), (60, -30), (460, -30)
+			bendpoints (10, 0), (10, -30), (460, -30)
 		}
-		outPin sequenceCall at (-20, -34) {
+		outPin {
+			connection_26
+		}
+		sequenceCall at (-20, -34) {
 			inPin connection_55
 		}
 	}

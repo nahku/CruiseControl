@@ -69,7 +69,45 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 		//DriverMessages.increaseSpeed = true;
 		//wait0,01s
 		//DriverMessages.increaseSpeed = false;
+	}
+	
+	
+	@thread
+	public void keepTarget() {
+		//DriverMessages.powerDriver = 50.0;
+		if(flag){
+			DriverMessages.onButtonPressed = true;
+			flag = false;
+		}else{
+			DriverMessages.onButtonPressed = false;
+		}
+		
+		if(time<5.0){
+			DriverMessages.powerDriver = 50.0;
+		}
+		
+		else if(time<10.0 && time>5.0){
+			DriverMessages.powerDriver = 0.0;
+			
+			if(increaseCounter > 1){
+				DriverMessages.increaseSpeed = true;
+				increaseCounter -= 1;
+			} else if(increaseCounter == 1){
+				DriverMessages.increaseSpeed = false;
+			}
+			
+		}
+		else if(time<15.0 && time>10.0){
+				DriverMessages.increaseSpeed = false;
+		}
 		
 		
+		//DriverMessages.increaseSpeed = true;
+		//wait0,01s
+		//DriverMessages.increaseSpeed = false;
+		//wait0,01s
+		//DriverMessages.increaseSpeed = true;
+		//wait0,01s
+		//DriverMessages.increaseSpeed = false;
 	}
 }

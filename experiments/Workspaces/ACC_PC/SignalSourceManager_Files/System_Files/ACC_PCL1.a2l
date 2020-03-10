@@ -56,7 +56,7 @@
 		        QP_BLOB 1
 		    /end SOURCE
 		    /begin TP_BLOB
-		         /* programm id */ 4152384028
+		         /* programm id */ 738210585
 		         /* target id   */ 7
 		         /*             */ 0 2 0
 		    /end TP_BLOB
@@ -841,6 +841,7 @@
 				myWork.StateHandlerBD
 				myWork.Target
 				myWork.PassThrough
+				myWork.Controller
 				resources.TimeTick
 			/end SUB_FUNCTION
 		/end FUNCTION
@@ -1017,6 +1018,18 @@
 			/end LOC_MEASUREMENT
 		/end FUNCTION
 		
+		/begin FUNCTION myWork.Controller
+			""
+			/begin IN_MEASUREMENT
+				resources.CarMessages.v
+				resources.TargetMessages.targetVelocity
+			/end IN_MEASUREMENT
+			/begin OUT_MEASUREMENT
+				resources.ControllerMessages.brake
+				resources.ControllerMessages.gas
+			/end OUT_MEASUREMENT
+		/end FUNCTION
+		
 		/begin FUNCTION resources.TimeTick
 			""
 		/end FUNCTION
@@ -1059,6 +1072,7 @@
 				myWork.Target
 				myWork.PassThrough
 				resources.ControllerMessages
+				myWork.Controller
 				resources.TimeTick
 			/end SUB_GROUP
 		/end GROUP
@@ -1227,6 +1241,10 @@
 				resources.ControllerMessages.brake
 				resources.ControllerMessages.gas
 			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP myWork.Controller
+			""
 		/end GROUP
 		
 		/begin GROUP resources.TimeTick

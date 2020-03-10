@@ -5,6 +5,7 @@ application {
 	class myWork.StateHandlerBD
 	class myWork.Target
 	class myWork.PassThrough
+	class myWork.Controller
 }
 schedule {
 	startup {
@@ -15,8 +16,10 @@ schedule {
 		process myCar.myCar.calc
 		process myWork.myACC.control
 		process myWork.myDriver.drive
-		process myWork.myDriver.increaseTarget
+		process myWork.myDriver.keepTarget
 		process myWork.StateHandlerBD.calc
+		process myWork.PassThrough.calc
 		process myWork.Target.computeTarget
+		process myWork.Controller.calc
 	}
 }

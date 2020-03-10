@@ -34,7 +34,7 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 		}
 		
 		if(time<5.0){
-			DriverMessages.powerDriver = 50.0;
+			DriverMessages.powerDriver = 100.0;
 		}
 		
 		else if(time<10.0 && time>5.0){
@@ -59,7 +59,7 @@ writes DriverMessages.powerDriver, DriverMessages.brakeDriver, DriverMessages.in
 		else
 		{
 			DriverMessages.increaseSpeed = false;
-			DriverMessages.brakeDriver = 10.0;
+			DriverMessages.brakeDriver = 100.0;
 		}
 		
 		//DriverMessages.increaseSpeed = true;

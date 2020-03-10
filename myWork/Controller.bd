@@ -23,25 +23,25 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.ControllerMessages.gas at (911, 65) {
+	simpleIdentifier resources.ControllerMessages.gas at (1111, 105) {
 		label at (0, -1)
 		inPin connection_38 {
-			bendpoints (40, 0), (40, -430)
+			bendpoints (30, 0), (30, -390)
 		}
 		sequenceCall {
 			inPin connection_37 {
-				bendpoints (160, 0), (160, 10)
+				bendpoints (260, 0), (260, -9), (390, -9), (390, 0)
 			}
 		}
 	}
-	simpleIdentifier resources.ControllerMessages.brake at (911, 235) {
+	simpleIdentifier resources.ControllerMessages.brake at (1111, 335) {
 		label at (0, -1)
 		inPin connection_36 {
-			bendpoints (80, 0), (80, -260)
+			bendpoints (30, 0), (30, -160)
 		}
 		sequenceCall at (-20, -44) {
 			inPin connection_35 {
-				bendpoints (150, 0), (150, 10)
+				bendpoints (160, 0), (160, 122), (330, 122), (330, 121), (420, 121), (420, 130)
 			}
 		}
 	}
@@ -65,59 +65,55 @@ blockdiagramSpecification Main {
 			connection_12
 		}
 	}
-	if at (521, 31) {
+	if at (521, 81) {
 		inPin connection_16 {
-			bendpoints (60, 0), (60, -20)
+			bendpoints (60, 0), (60, 29)
 		}
 		ifControlFlowOutPin {
-			connection_18, connection_37
+			connection_55, connection_37
 		}
 		sequenceCall {
 			inPin connection_13
 		}
 	}
-	if at (531, 181) {
-		inPin connection_12
+	if at (531, 161) {
+		inPin connection_12 {
+			bendpoints (130, 0)
+		}
 		ifControlFlowOutPin {
-			connection_20, connection_35
+			connection_35, connection_20
 		}
 		sequenceCall {
 			inPin connection_17
 		}
 	}
-	simpleIdentifier resources.ControllerMessages.brake at (891, 315) {
+	simpleIdentifier resources.ControllerMessages.brake at (1111, 405) {
 		label at (0, -1)
-		inPin connection_19 {
-			bendpoints (170, 0), (170, -20)
-		}
-		sequenceCall {
-			inPin connection_18 {
-				bendpoints (150, 0), (150, 260)
+		inPin connection_19
+		sequenceCall at (-10, -24) {
+			inPin connection_55 {
+				bendpoints (260, 0), (260, 291), (390, 291), (390, 300)
 			}
 		}
 	}
-	literal Numeric "0.0" at (461, 333) size (49, 0) {
+	literal Numeric "0.0" at (1001, 403) size (49, 0) {
 		outPin {
 			connection_19
 		}
 	}
-	literal Numeric "0.0" at (461, 113) size (49, 0) {
+	literal Numeric "0.0" at (1001, 183) size (49, 0) {
 		outPin {
 			connection_21
 		}
 	}
-	simpleIdentifier resources.ControllerMessages.gas at (921, 125) {
+	simpleIdentifier resources.ControllerMessages.gas at (1111, 185) {
 		label at (0, -1)
-		inPin connection_21 {
-			bendpoints (200, 0), (200, 10)
-		}
-		sequenceCall {
-			inPin connection_20 {
-				bendpoints (160, 0), (160, -80)
-			}
+		inPin connection_21
+		sequenceCall at (-10, -24) {
+			inPin connection_20
 		}
 	}
-	simpleIdentifier resources.CarMessages.acceleration at (81, 275) {
+	simpleIdentifier resources.CarMessages.acceleration at (341, 295) {
 		label at (-70, 19)
 		outPin {
 			connection_25
@@ -126,31 +122,29 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	absolute at (141, 271) {
+	absolute at (401, 291) {
 		inPin connection_25
 		outPin {
-			connection_26
+			connection_59
 		}
 	}
-	minimum at (231, 276) {
-		inPin connection_27 {
-			bendpoints (30, 0), (30, -100)
+	minimum at (471, 276) {
+		inPin connection_58 {
+			bendpoints (10, 0), (10, 50)
 		}
-		inPin connection_26 {
-			bendpoints (20, 0), (20, 20)
-		}
+		inPin connection_59
 		outPin {
 			connection_34
 		}
 	}
-	literal Numeric "4.0" at (131, 373) size (49, 0) {
+	literal Numeric "4.0" at (401, 223) size (49, 0) {
 		outPin {
-			connection_33, connection_27
+			connection_58, connection_33
 		}
 	}
-	subtraction at (281, 326) {
+	subtraction at (541, 326) {
 		inPin connection_33 {
-			bendpoints (50, 0), (50, -50)
+			bendpoints (70, 0), (70, 100)
 		}
 		inPin connection_34 {
 			bendpoints (0, 60)
@@ -159,45 +153,43 @@ blockdiagramSpecification Main {
 			connection_30
 		}
 	}
-	multiplication at (341, 376) {
+	multiplication at (601, 376) {
 		inPin connection_30 {
 			bendpoints (0, 40)
 		}
-		inPin connection_49 {
-			bendpoints (20, 0), (20, -20)
-		}
+		inPin connection_49
 		outPin {
 			connection_50
 		}
 	}
-	literal Numeric "50.0" at (231, 413) size (69, 0) {
+	literal Numeric "50.0" at (481, 393) size (69, 0) {
 		outPin {
 			connection_49
 		}
 	}
-	maximum at (201, 566) {
+	maximum at (461, 566) {
 		inPin connection_44 {
-			bendpoints (50, 0), (50, 260), (70, 260)
+			bendpoints (60, 0), (60, 520)
 		}
 		inPin connection_45 {
-			bendpoints (20, 0), (20, 220), (-10, 220), (-10, 440)
+			bendpoints (20, 0), (20, 440)
 		}
 		outPin {
 			connection_40
 		}
 	}
-	minimum at (211, 486) {
+	minimum at (471, 486) {
 		inPin connection_42 {
-			bendpoints (60, 0), (60, 220), (80, 220)
+			bendpoints (60, 0), (60, 440)
 		}
 		inPin connection_43 {
-			bendpoints (30, 0), (30, 180), (80, 180)
+			bendpoints (20, 0), (20, 360)
 		}
 		outPin {
 			connection_41
 		}
 	}
-	division at (331, 526) {
+	division at (591, 526) {
 		inPin connection_41 {
 			bendpoints (50, 0), (50, 30)
 		}
@@ -208,45 +200,41 @@ blockdiagramSpecification Main {
 			connection_48
 		}
 	}
-	subtraction at (421, 566) {
+	subtraction at (681, 516) {
 		inPin connection_47 {
-			bendpoints (10, 0), (10, 100)
+			bendpoints (10, 0), (10, 50)
 		}
-		inPin connection_48 {
-			bendpoints (20, 0), (20, 50)
-		}
+		inPin connection_48
 		outPin {
 			connection_51
 		}
 	}
-	literal Numeric "1.1" at (351, 463) size (49, 0) {
+	literal Numeric "1.1" at (611, 463) size (49, 0) {
 		outPin {
 			connection_47
 		}
 	}
-	multiplication at (471, 456) {
+	multiplication at (731, 456) {
 		inPin connection_50 {
 			bendpoints (0, 30), (90, 30)
 		}
 		inPin connection_51 {
-			bendpoints (0, -50), (10, -50)
+			bendpoints (10, 0)
 		}
 		outPin {
 			connection_52
 		}
 	}
-	maximum at (521, 486) {
+	maximum at (821, 486) {
 		inPin connection_52 {
-			bendpoints (10, 0)
+			bendpoints (50, 0)
 		}
-		inPin connection_53 {
-			bendpoints (0, -30), (-10, -30)
-		}
+		inPin connection_53
 		outPin {
 			connection_38, connection_36
 		}
 	}
-	literal Numeric "0.0" at (481, 553) size (49, 0) {
+	literal Numeric "0.0" at (751, 503) size (49, 0) {
 		outPin {
 			connection_53
 		}

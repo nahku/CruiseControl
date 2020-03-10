@@ -14,8 +14,8 @@ writes ControllerMessages.gas, ControllerMessages.brake {
 			ControllerMessages.gas = max((((4.0 - min(4.0, abs(CarMessages.acceleration))) * 50.0) * (1.1 - (min(CarMessages.v, TargetMessages.targetVelocity) / max(CarMessages.v, TargetMessages.targetVelocity)))), 0.0); // Main/calc 1/if-then 2
 		} // Main/calc 1
 		if (CarMessages.v > TargetMessages.targetVelocity) {
-			ControllerMessages.gas = 0.0; // Main/calc 2/if-then 1
-			ControllerMessages.brake = max((((4.0 - min(4.0, abs(CarMessages.acceleration))) * 50.0) * (1.1 - (min(CarMessages.v, TargetMessages.targetVelocity) / max(CarMessages.v, TargetMessages.targetVelocity)))), 0.0); // Main/calc 2/if-then 2
+			ControllerMessages.brake = max((((4.0 - min(4.0, abs(CarMessages.acceleration))) * 50.0) * (1.1 - (min(CarMessages.v, TargetMessages.targetVelocity) / max(CarMessages.v, TargetMessages.targetVelocity)))), 0.0); // Main/calc 2/if-then 1
+			ControllerMessages.gas = 0.0; // Main/calc 2/if-then 2
 		} // Main/calc 2
 	}
 }

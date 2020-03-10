@@ -1,6 +1,130 @@
 classType myWork.Controller
 blockdiagramSpecification Main {
 	methodBody calc {
-		outPin active
+		outPin active {
+			connection_13, connection_17
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (91, 45) {
+		label at (0, -1)
+		outPin {
+			connection_6, connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.TargetMessages.targetVelocity at (91, 145) {
+		label at (0, -1)
+		outPin {
+			connection_5, connection_3
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.ControllerMessages.gas at (911, 65) {
+		label at (0, -1)
+		inPin connection_15 {
+			bendpoints (170, 0), (170, -10)
+		}
+		sequenceCall {
+			inPin connection_14 {
+				bendpoints (160, 0), (160, 10)
+			}
+		}
+	}
+	simpleIdentifier resources.ControllerMessages.brake at (911, 195) {
+		label at (0, -1)
+		inPin connection_10 {
+			bendpoints (60, 0), (60, -80)
+		}
+		sequenceCall at (-20, -44) {
+			inPin connection_9 {
+				bendpoints (150, 0), (150, -30)
+			}
+		}
+	}
+	less at (361, 46) {
+		inPin connection_6
+		inPin connection_5 {
+			bendpoints (110, 0), (110, -80)
+		}
+		outPin {
+			connection_16
+		}
+	}
+	greater at (361, 176) {
+		inPin connection_4 {
+			bendpoints (190, 0), (190, 130)
+		}
+		inPin connection_3 {
+			bendpoints (110, 0), (110, 50)
+		}
+		outPin {
+			connection_12
+		}
+	}
+	literal Numeric "100.0" at (551, 73) size (79, 0) {
+		outPin {
+			connection_15
+		}
+	}
+	literal Numeric "100.0" at (471, 273) size (79, 0) {
+		outPin {
+			connection_10
+		}
+	}
+	if at (521, 31) {
+		inPin connection_16 {
+			bendpoints (60, 0), (60, -20)
+		}
+		ifControlFlowOutPin {
+			connection_14, connection_18
+		}
+		sequenceCall {
+			inPin connection_13
+		}
+	}
+	if at (531, 181) {
+		inPin connection_12
+		ifControlFlowOutPin {
+			connection_9, connection_20
+		}
+		sequenceCall {
+			inPin connection_17
+		}
+	}
+	simpleIdentifier resources.ControllerMessages.brake at (891, 315) {
+		label at (0, -1)
+		inPin connection_19 {
+			bendpoints (170, 0), (170, -20)
+		}
+		sequenceCall {
+			inPin connection_18 {
+				bendpoints (150, 0), (150, 260)
+			}
+		}
+	}
+	literal Numeric "0.0" at (461, 333) size (49, 0) {
+		outPin {
+			connection_19
+		}
+	}
+	literal Numeric "0.0" at (461, 113) size (49, 0) {
+		outPin {
+			connection_21
+		}
+	}
+	simpleIdentifier resources.ControllerMessages.gas at (921, 125) {
+		label at (0, -1)
+		inPin connection_21 {
+			bendpoints (200, 0), (200, 10)
+		}
+		sequenceCall {
+			inPin connection_20 {
+				bendpoints (160, 0), (160, -80)
+			}
+		}
 	}
 }

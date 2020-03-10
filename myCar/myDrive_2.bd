@@ -2,7 +2,7 @@ classType myCar.myDrive_2
 blockdiagramSpecification Main {
 	methodBody vCar {
 		outPin active {
-			connection_2, connection_11, connection_32, connection_16, connection_48, connection_36, connection_29, connection_3, connection_1
+			connection_2, connection_11, connection_32, connection_16, connection_48, connection_36, connection_29, connection_3, connection_55, connection_1
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -45,11 +45,11 @@ blockdiagramSpecification Main {
 			bendpoints (0, -100)
 		}
 		outPin {
-			connection_26
+			connection_56, connection_26
 		}
 	}
 	simpleIdentifier EngineMomentum at (241, 91) {
-		label at (0, 1)
+		label at (-220, 11)
 		inPin connection_7 {
 			bendpoints (120, 0)
 		}
@@ -87,7 +87,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	simpleIdentifier momentum at (301, 105) {
-		label at (0, -1)
+		label at (20, -101)
 		inPin connection_12 {
 			bendpoints (0, 0)
 		}
@@ -104,7 +104,7 @@ blockdiagramSpecification Main {
 		outPin {
 			connection_27
 		}
-		sequenceCall at (-10, -14) {
+		sequenceCall at (20, -64) {
 			inPin connection_29
 		}
 	}
@@ -143,7 +143,7 @@ blockdiagramSpecification Main {
 	freeComment at (561, 171) size (56, 21) {
 		"General idea is to focus on force balance and therby neglect \r\ninertial effects (mass factors). Hence, engine momentum is \r\nbalance by braking, air friction and slope (landscape effect).\r\n\r\nVelocity here is in km/h but all accelarations are in m/s^2.\r\n\r\nThe track is understood to be a closed 1000m cycle.\r\n\r\nAlthough theoretically possible, no negative velocities are allowed - \r\nthe driver is expected to use a static brake here.\r\n\r\nEffects of gear shift and clutch are also neglected here."
 	}
-	literal Numeric "9.81" at (251, 213) size (49, 0) {
+	literal Numeric "9.81" at (251, 213) size (69, 0) {
 		outPin {
 			connection_50
 		}
@@ -406,7 +406,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	simpleIdentifier resources.TimeTick.dTs at (451, 135) {
-		label at (0, -1)
+		label at (40, -101)
 		inPin outPin {
 			connection_28
 		}
@@ -421,6 +421,15 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier accel at (901, 45) {
+		label at (0, -1)
+		inPin connection_56 {
+			bendpoints (60, 0), (60, -30), (460, -30)
+		}
+		outPin sequenceCall at (-20, -34) {
+			inPin connection_55
 		}
 	}
 }

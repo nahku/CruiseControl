@@ -2,30 +2,7 @@ classType myCar.myCar
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_11
-		}
-	}
-	complexIdentifier myVehicle at (301, 91) size (43, 20) backgroundColor #ffffff {
-		label at (-10, 1)
-		methodCall myCar.myDrive_2.vCar {
-			argumentPin powerCtrl at (left, 8) connection_12
-			argumentPin brakeCtrl at (left, 15) connection_13
-			returnPin at (right, 11) {
-				connection_6
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-		elementCall (myCar.myDrive_2.momentum) {
-			returnPin at (right, 8) sequenceCall {
-				inPin
-			}
-		}
-		elementCall (myCar.myDrive_2.s) {
-			returnPin at (right, 15) sequenceCall {
-				inPin
-			}
+			connection_11, connection_14
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (761, 205) {
@@ -51,6 +28,36 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	complexIdentifier myVehicle at (301, 151) size (38, 14) backgroundColor #ffffff {
+		label at (-10, 1)
+		methodCall myCar.myDrive_2.vCar {
+			argumentPin powerCtrl at (left, 2) connection_12
+			argumentPin brakeCtrl at (left, 9) connection_13
+			returnPin at (right, 5) {
+				connection_6
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_2.accel) {
+			returnPin at (right, 0) {
+				connection_15
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.acceleration at (1331, 185) {
+		label at (0, -1)
+		inPin connection_15 {
+			bendpoints (0, 10), (640, 10)
+		}
+		sequenceCall {
+			inPin connection_14
 		}
 	}
 }
